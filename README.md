@@ -10,7 +10,7 @@ Microservice:
     - RabbitMQ
 - Services:
     - Fraud
-    - Customer
+    - [Customer](/service-customer/README.md)
     - Notification
 - Tracing
     - Zipkin
