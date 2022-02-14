@@ -9,7 +9,7 @@ Microservice:
     - Kafka
     - RabbitMQ
 - Services:
-    - Fraud
+    - [Fraud](/service-fraud/README.md)
     - [Customer](/service-customer/README.md)
     - Notification
 - Tracing
