@@ -1,4 +1,4 @@
-package com.microservice.dto;
+package com.microservice.clients.serviceFraud;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,6 +11,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class FraudCheckResponse {
 
-    private Boolean isFraudster;
+    private boolean isFraudster;
 
 }
