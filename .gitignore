@@ -1,3 +1,4 @@
 /.idea/
 /service-customer/target/
 /service-fraud/target/
+/eureka-server/target/

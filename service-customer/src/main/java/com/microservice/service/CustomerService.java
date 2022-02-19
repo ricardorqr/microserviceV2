@@ -26,7 +26,7 @@ public class CustomerService {
                 .build();
         repository.saveAndFlush(customer);
 
-        FraudCheckResponse fraudCheckResponse = restTemplate.getForObject("http://localhost:8082/fraud-check/{customerId}",
+        FraudCheckResponse fraudCheckResponse = restTemplate.getForObject("http://service-fraud/fraud-check/{customerId}",
                 FraudCheckResponse.class,
                 customer.getId());
 

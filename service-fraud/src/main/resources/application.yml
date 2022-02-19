@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: service-customer
+    name: service-fraud
   datasource: # H2 Database
     username: sa
     url: jdbc:h2:mem:C:/fraud # jdbc:h2:mem:/home/ec2-user/fraud
@@ -27,3 +27,10 @@ spring:
 springdoc: # Swagger
   swagger-ui:
     path: /fraud/swagger
+
+eureka: # Eureka Server
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
