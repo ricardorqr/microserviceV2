@@ -14,5 +14,6 @@ Microservice:
     - Notification
 - Tracing
     - Zipkin
+- [OpenFeign](/clients/README.md)
 
 ![Microservice V2](/files/MicroserviceV2.png)
