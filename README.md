@@ -4,7 +4,7 @@ Microservice:
 - API Gateway
 - Config Server
 - Service Registry:
-    - Eureka Server
+    - [Eureka Server](/eureka-server/README.md)
 - Circuit Breaker:
     - Kafka
     - RabbitMQ
