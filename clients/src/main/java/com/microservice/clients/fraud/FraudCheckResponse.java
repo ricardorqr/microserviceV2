@@ -1,4 +1,4 @@
-package com.microservice.clients.serviceFraud;
+package com.microservice.clients.fraud;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

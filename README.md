@@ -11,7 +11,7 @@ Microservice:
 - Services:
     - [Fraud](/service-fraud/README.md)
     - [Customer](/service-customer/README.md)
-    - Notification
+    - [Notification](/service-notification/README.md)
 - Tracing
     - Zipkin
 - [OpenFeign](/clients/README.md)
