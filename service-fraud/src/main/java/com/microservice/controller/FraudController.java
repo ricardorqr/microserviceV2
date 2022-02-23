@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.microservice.clients.fraud.FraudCheckResponse;
 import com.microservice.service.FraudService;
 
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -20,6 +21,7 @@ public class FraudController {
     private final FraudService service;
 
     @GetMapping("/{customerId}")
+    @Operation(summary = "Check if a customer is fraudulent")
     public FraudCheckResponse isFraudster(@PathVariable("customerId") Integer customerId) {
         log.info("Fraud check request for the customer: {}", customerId);
         return FraudCheckResponse.builder()
