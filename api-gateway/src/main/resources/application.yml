@@ -1,0 +1,22 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: api-gateway
+  zipkin: # Zipkin Tracing
+    base-url: http://localhost:9411
+  cloud:
+    gateway:
+      routes:
+        - id: service-customer
+          uri: lb://service-customer
+          predicates:
+            - Path=/customers/**
+
+eureka: # Eureka Server
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
