@@ -7,13 +7,17 @@ Microservice:
     - [Eureka Server](/eureka-server/README.md)
 - Circuit Breaker:
     - Kafka
-    - RabbitMQ
-- Services:
+    - RabbitMQ (Docker)
+      - http://localhost:15672
+      - Login: guest
+      - Password: guest
+ - Services:
     - [Fraud](/service-fraud/README.md)
     - [Customer](/service-customer/README.md)
     - [Notification](/service-notification/README.md)
 - Tracing
-    - Zipkin and Spring Sleuth
+    - Zipkin and Spring Sleuth (Docker)
+      - http://localhost:9411
 - [OpenFeign](/clients/README.md)
 
 ![Microservice V2](/files/MicroserviceV2.png)

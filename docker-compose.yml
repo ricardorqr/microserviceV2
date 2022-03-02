@@ -1,10 +1,12 @@
 services:
-  zipkin:
+  zipkin: # Zipkin Server
     image: openzipkin/zipkin
     container_name: zipkin
-    # Environment settings are defined here https://github.com/openzipkin/zipkin/blob/master/zipkin-server/README.md#environment-variables
     ports:
-      # Port used for the Zipkin UI and HTTP Api
       - "9411:9411"
-      # Uncomment if you set SCRIBE_ENABLED=true
-      # - 9410:9410
+  rabbitmq: # Rabbit Message Queue Server
+    image: rabbitmq:3.9.13-management-alpine
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"

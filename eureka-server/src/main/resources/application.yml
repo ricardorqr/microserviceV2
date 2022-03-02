@@ -4,10 +4,10 @@ server:
 spring:
   application:
     name: eureka-server
-  zipkin: # Zipkin Tracing
-      base-url: http://localhost:9411
+  zipkin: # Zipkin Tracing Server. It connects to the Zipkin server docker image
+    base-url: http://localhost:9411
 
-eureka:
+eureka: # Eureka Server
   client:
     fetch-registry: false
     register-with-eureka: false
