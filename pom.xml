@@ -16,18 +16,19 @@
         <module>clients</module>
         <module>service-notification</module>
         <module>api-gateway</module>
+        <module>rabbit-mq</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <spring.boot.maven.plugin.version>2.6.3</spring.boot.maven.plugin.version>
         <spring.cloud-version>2021.0.1</spring.cloud-version>
     </properties>
 
     <dependencies>
-        <!-- Lombok-->
+        <!-- Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

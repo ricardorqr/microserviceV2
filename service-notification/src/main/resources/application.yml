@@ -25,6 +25,8 @@ spring:
       path: /notification/h2
   zipkin: # Zipkin Tracing Server. It connects to the Zipkin server docker image
     base-url: http://localhost:9411
+  rabbitmq: # Rabbit Message Queue Server. It connects to the Rabbit Message MQ server docker image
+    addresses: localhost:5672 # No http://. It has its own protocol
 
 springdoc: # Swagger documentation
   swagger-ui:
@@ -36,3 +38,11 @@ eureka: # Eureka Server. It connects to the Eureka server service
       defaultZone: http://localhost:8761/eureka
     fetch-registry: true
     register-with-eureka: true
+
+rabbitmq:
+  exchanges:
+    internal: internal.exchange
+  queues:
+    notification: notification.queue
+  routing-keys:
+    internal-notification: internal.notification.routing-key
