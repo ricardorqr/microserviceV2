@@ -17,7 +17,7 @@ public class RabbitMessageQueueConfig {
     private final ConnectionFactory connectionFactory;
 
     @Bean
-    public AmqpTemplate getAmqpTemplate() {
+    public AmqpTemplate amqpTemplate() {
         RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
         rabbitTemplate.setMessageConverter(getJacksonConverter());
         return rabbitTemplate;

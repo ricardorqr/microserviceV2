@@ -3,14 +3,12 @@ package com.microservice.rabbitmq;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.AmqpTemplate;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
 
 @Slf4j
 @AllArgsConstructor
 @Component
-@ComponentScan("com.microservice.rabbitmq")
 public class RabbitMessageQueueProducer {
 
     private final AmqpTemplate amqpTemplate;
