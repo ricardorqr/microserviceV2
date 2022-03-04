@@ -1,14 +1,12 @@
 package com.microservice.notification.service;
 
-import java.time.LocalDateTime;
-
-import com.microservice.notification.repository.NotificationRepository;
-import org.springframework.stereotype.Service;
-
 import com.microservice.clients.notification.NotificationRequest;
 import com.microservice.notification.model.Notification;
-
+import com.microservice.notification.repository.NotificationRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
 
 @Service
 @AllArgsConstructor

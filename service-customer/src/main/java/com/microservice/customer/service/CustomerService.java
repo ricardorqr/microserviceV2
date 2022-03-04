@@ -1,17 +1,16 @@
 package com.microservice.customer.service;
 
-import com.microservice.customer.repository.CustomerRepository;
-import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
-
 import com.microservice.clients.fraud.FraudCheckResponse;
 import com.microservice.clients.fraud.FraudClient;
 import com.microservice.clients.notification.NotificationClient;
 import com.microservice.clients.notification.NotificationRequest;
 import com.microservice.customer.dto.CustomerRequest;
 import com.microservice.customer.model.Customer;
-
+import com.microservice.customer.repository.CustomerRepository;
+import com.microservice.rabbitmq.RabbitMessageQueueProducer;
 import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 @Service
 @AllArgsConstructor
@@ -21,6 +20,7 @@ public class CustomerService {
     private final RestTemplate restTemplate;
     private final FraudClient fraudClient;
     private final NotificationClient notificationClient;
+    private final RabbitMessageQueueProducer producer;
 
     public void saveCustomer(CustomerRequest customerRequest) {
         Customer customer = Customer.builder()
@@ -49,7 +49,10 @@ public class CustomerService {
                                                                      .build();
 
         // Notification service
-        notificationClient.sendNotification(notificationRequest);
+        // No need to send notification though Notification Service. Now, it is sending the notification (message)
+        // to the message queue
+//        notificationClient.sendNotification(notificationRequest);
+        producer.publish(notificationRequest, "internal.exchange", "internal.notification.routing-key");
     }
 
 }

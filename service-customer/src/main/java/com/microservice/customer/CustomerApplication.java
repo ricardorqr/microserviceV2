@@ -12,7 +12,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication(
         scanBasePackages = {
                 "com.microservice.customer",
-                "com.microservice.rabbitmp"
+                "com.microservice.rabbitmq"
         })
 @EnableEurekaClient
 @EnableFeignClients(basePackages = "com.microservice.clients")
