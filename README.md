@@ -25,7 +25,7 @@ Microservice:
 
 # Running the application
 
-1. Terminal run `<Where you cloned the project>$ docker compose up`
+1. Terminal run `<microserviceV2>$ docker compose up`
 2. Run `eureka-server` module
 3. Run `eureka-server` module
 4. Run `service-customer`, `service-fraud` or `service-notification`, modules. It doesn't matter the order
