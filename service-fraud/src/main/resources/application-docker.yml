@@ -1,0 +1,38 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: service-fraud
+  datasource: # H2 Database
+    username: sa
+    url: jdbc:h2:mem:C:/fraud # jdbc:h2:mem:/home/ec2-user/fraud
+    driverClassName: org.h2.Driver
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  h2: # H2 Console
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+      path: /fraud/h2
+  zipkin: # Zipkin Tracing Server. It connects to the Zipkin server docker image
+    base-url: http://zipkin:9411
+
+springdoc: # Swagger documentation
+  swagger-ui:
+    path: /fraud/swagger
+
+eureka: # Eureka Server. It connects to the Eureka server service
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true

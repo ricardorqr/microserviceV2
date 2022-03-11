@@ -1,0 +1,22 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: api-gateway
+  zipkin: # Zipkin Tracing Server. It connects to the Zipkin server docker image
+    base-url: http://zipkin:9411
+  cloud: # It maps all routes. in our case only Customer
+    gateway:
+      routes:
+        - id: service-customer
+          uri: lb://service-customer
+          predicates:
+            - Path=/customers/**
+
+eureka: # Eureka Server. It connects to the Eureka server service
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true

@@ -25,11 +25,9 @@ Microservice:
 
 # Running the application
 
+1. (Optional) Terminal run `<microserviceV2>$ docker compose pull`
 1. Terminal run `<microserviceV2>$ docker compose up`
-2. Run `eureka-server` module
-3. Run `api-gateway` module
-4. Run `service-customer`, `service-fraud` or `service-notification`, modules. It doesn't matter the order
-5. Open Postman:
+1. Open Postman:
     - Do a POST request <localhost:8081/customers/>
     - JSON
 
