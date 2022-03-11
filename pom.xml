@@ -25,7 +25,7 @@
         <maven.compiler.target>17</maven.compiler.target>
         <spring.boot.maven.plugin.version>2.6.3</spring.boot.maven.plugin.version>
         <spring.cloud-version>2021.0.1</spring.cloud-version>
-        <image>ricardorqr/${project.artifactId}:${project.version}</image>
+        <image>ricardorqr/${project.artifactId}:${project.version}</image> <!-- Docker Hub Microservice -->
     </properties>
 
     <dependencies>
@@ -94,16 +94,19 @@
                     <version>2.22.2</version>
                 </plugin>
 
-                <!-- Containerization Plugin -->
+                <!-- Docker Containerization Plugin -->
                 <plugin>
                     <groupId>com.google.cloud.tools</groupId>
                     <artifactId>jib-maven-plugin</artifactId>
                     <version>3.2.0</version>
                     <configuration>
                         <from>
-                            <image>
-                                eclipse-temurin:17@sha256:2b47a8ea946ce1e5365a1562414ed576e378b7b670cadff3fb98ebecf2890cdc
-                            </image>
+                            <image>eclipse-temurin:17</image>
+                            <!-- Docker Hub Credentials -->
+                            <auth>
+                                <username>ricardorqr</username>
+                                <password>84265Rqr@</password>
+                            </auth>
                             <platforms>
                                 <platform>
                                     <architecture>arm64</architecture>
@@ -135,6 +138,7 @@
 
         <!-- Plugin for all submodules -->
         <plugins>
+            <!-- Package modules and dependencies -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

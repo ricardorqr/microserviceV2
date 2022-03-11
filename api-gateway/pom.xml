@@ -11,6 +11,8 @@
 
     <artifactId>api-gateway</artifactId>
 
+    <packaging>jar</packaging>
+
     <build>
         <plugins>
             <plugin>
@@ -33,11 +35,6 @@
             </build>
         </profile>
     </profiles>
-
-    <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-    </properties>
 
     <dependencies>
         <!-- Spring Cloud Gateway -->
