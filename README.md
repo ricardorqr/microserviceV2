@@ -10,8 +10,6 @@ Microservice:
     - Kafka
     - RabbitMQ (Docker)
         - http://localhost:15672
-        - Login: guest
-        - Password: guest
 - Services:
     - [Fraud](service-fraud/README.md)
     - [Customer](service-customer/README.md)
@@ -26,8 +24,13 @@ Microservice:
 # Running the application
 
 1. (Optional) Terminal run `<microserviceV2>$ docker compose pull`
-1. Terminal run `<microserviceV2>$ docker compose up`
-1. Open Postman:
+2. Terminal run `<microserviceV2>$ docker compose up`
+    - Eureka Server: http://localhost:8761/
+    - Zipkin: http://localhost:9411/
+    - Rabbit MQ: http://localhost:15672/
+        - Login: guest
+        - Password: guest
+3. Open Postman:
     - Do a POST request <localhost:8081/customers/>
     - JSON
 
