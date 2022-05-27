@@ -1,23 +1,23 @@
 services:
+
   zipkin: # Zipkin Server
     image: openzipkin/zipkin
-    container_name: zipkin
     ports:
       - "9411:9411"
     networks:
       - spring
+
   rabbitmq: # Rabbit Message Queue Server
     image: rabbitmq:3.9.13-management-alpine
-    container_name: rabbitmq
     ports:
       - "5672:5672"
       - "15672:15672"
     networks:
       - spring
+
   # Docker containers
   eureka-server:
     image: ricardorqr/eureka-server:latest
-    container_name: eureka-server
     ports:
       - "8761:8761"
     networks:
@@ -26,9 +26,9 @@ services:
       - zipkin
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+
   api-gateway:
     image: ricardorqr/api-gateway:latest
-    container_name: api-gateway
     ports:
       - "8084:8084"
     networks:
@@ -38,9 +38,9 @@ services:
       - eureka-server
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+
   service-customer:
     image: ricardorqr/service-customer:latest
-    container_name: service-customer
     ports:
       - "8081:8081"
     networks:
@@ -51,9 +51,9 @@ services:
       - rabbitmq
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+
   service-fraud:
     image: ricardorqr/service-fraud:latest
-    container_name: service-fraud
     ports:
       - "8082:8082"
     networks:
@@ -64,9 +64,9 @@ services:
       - rabbitmq
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+
   service-notification:
     image: ricardorqr/service-notification:latest
-    container_name: service-notification
     ports:
       - "8083:8083"
     networks:
