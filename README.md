@@ -23,11 +23,13 @@ Microservice:
 
 # Settings
 
-In case Dockerhub does not have all the service images pushed, you need to do the command below to push all images.
+1 - You need to push all the service images pushed to Dockerhub. Please, use the command below.
 
 ```shell
 mvn clean package -P docker-build-image
 ```
+
+2 - You do not need to locally run the application through IntelliJ. Docker compose file already have all the service images. Go to the next section and do `docker compose up`.
 
 # Running the application
 
