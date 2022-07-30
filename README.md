@@ -21,6 +21,14 @@ Microservice:
 
 ![Microservice V2](files/MicroserviceV2.png)
 
+# Settings
+
+In case Dockerhub does not have all the service images pushed, you need to do the command below to push all images.
+
+```shell
+mvn clean package -P docker-build-image
+```
+
 # Running the application
 
 1. (Optional) Terminal run `<microserviceV2>$ docker compose pull`
