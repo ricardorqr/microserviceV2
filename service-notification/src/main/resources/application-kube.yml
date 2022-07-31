@@ -1,0 +1,41 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: service-notification
+  datasource: # H2 Database
+    username: sa
+    url: jdbc:h2:mem:notification # In memory DB
+    driverClassName: org.h2.Driver
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  h2: # H2 Console
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+      path: /notification/h2
+  zipkin: # Zipkin Tracing Server. It connects to the Zipkin server docker image
+    base-url: http://zipkin:9411
+  rabbitmq: # Rabbit Message Queue Server. It connects to the Rabbit Message MQ server docker image
+    addresses: rabbitmq:5672 # No http://. It has its own protocol
+
+springdoc: # Swagger documentation
+  swagger-ui:
+    path: /notification/swagger
+
+rabbitmq:
+  exchanges:
+    internal: internal.exchange
+  queues:
+    notification: notification.queue
+  routing-keys:
+    internal-notification: internal.notification.routing-key
