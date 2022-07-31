@@ -38,3 +38,4 @@ eureka: # Eureka Server. It connects to the Eureka server service
       defaultZone: http://eureka-server:8761/eureka
     fetch-registry: true
     register-with-eureka: true
+    enabled: false
