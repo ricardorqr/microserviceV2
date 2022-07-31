@@ -16,28 +16,33 @@ services:
       - spring
 
   # Docker containers
-  eureka-server:
-    image: ricardorqr/eureka-server:latest
-    ports:
-      - "8761:8761"
-    networks:
-      - spring
-    depends_on:
-      - zipkin
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-
-  api-gateway:
-    image: ricardorqr/api-gateway:latest
-    ports:
-      - "8084:8084"
-    networks:
-      - spring
-    depends_on:
-      - zipkin
-      - eureka-server
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
+  #
+  # In order to run this project locally through docker, you have to comment all docker containers below:
+  # - eureka-server
+  # - api-gateway
+  #
+  #  eureka-server:
+  #    image: ricardorqr/eureka-server:latest
+  #    ports:
+  #      - "8761:8761"
+  #    networks:
+  #      - spring
+  #    depends_on:
+  #      - zipkin
+  #    environment:
+  #      - SPRING_PROFILES_ACTIVE=docker
+  #
+  #  api-gateway:
+  #    image: ricardorqr/api-gateway:latest
+  #    ports:
+  #      - "8084:8084"
+  #    networks:
+  #      - spring
+  #    depends_on:
+  #      - zipkin
+  #      - eureka-server
+  #    environment:
+  #      - SPRING_PROFILES_ACTIVE=docker
 
   service-customer:
     image: ricardorqr/service-customer:latest
@@ -47,7 +52,7 @@ services:
       - spring
     depends_on:
       - zipkin
-      - eureka-server
+      #      - eureka-server
       - rabbitmq
     environment:
       - SPRING_PROFILES_ACTIVE=docker
@@ -60,7 +65,7 @@ services:
       - spring
     depends_on:
       - zipkin
-      - eureka-server
+      #      - eureka-server
       - rabbitmq
     environment:
       - SPRING_PROFILES_ACTIVE=docker
@@ -73,7 +78,7 @@ services:
       - spring
     depends_on:
       - zipkin
-      - eureka-server
+      #      - eureka-server
       - rabbitmq
     environment:
       - SPRING_PROFILES_ACTIVE=docker
