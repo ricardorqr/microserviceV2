@@ -26,7 +26,7 @@ Microservice:
 1 - You need to push all service images to Dockerhub. Please, use the command below.
 
 ```shell
-<microserviceV2>$ mvn clean package -P docker-build-image
+<microserviceV2>$ mvn clean package -P build-docker-image
 ```
 
 2 - You might need to pull the latest images. Please, use the command below.
@@ -35,7 +35,8 @@ Microservice:
 <microserviceV2>$ docker-compose pull
 ```
 
-3 - You do not need to locally run the application through IntelliJ. Docker compose file already have all the service images. Go to the next section and do `docker compose up`.
+3 - You do not need to locally run the application through IntelliJ. Docker compose file already have all the service
+images. Go to the next section and do `docker compose up`.
 
 # Running the application
 
@@ -53,6 +54,7 @@ Microservice:
 ```
 
 # Links:
+
 - Eureka Server: http://localhost:8761/
 - Zipkin: http://localhost:9411/
 - Rabbit MQ: http://localhost:15672/
@@ -65,16 +67,16 @@ Microservice:
         - Password: password
         - URL: jdbc:h2:mem:customers
     - Fraud
-      - Link: http://localhost:8082/fraud/h2
-      - Login: sa
-      - Password: password
-      - URL: jdbc:h2:mem:fraud
+        - Link: http://localhost:8082/fraud/h2
+        - Login: sa
+        - Password: password
+        - URL: jdbc:h2:mem:fraud
     - Notification
         - Link: http://localhost:8083/notification/h2
         - Login: sa
         - Password: password
         - URL: jdbc:h2:mem:notification
 - Swagger
-  - http://localhost:8081/customers/swagger
-  - http://localhost:8082/fraud/swagger
-  - http://localhost:8083/notification/swagger
+    - http://localhost:8081/customers/swagger
+    - http://localhost:8082/fraud/swagger
+    - http://localhost:8083/notification/swagger
