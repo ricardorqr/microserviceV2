@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-notification
+  labels:
+    app: service-notification
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: service-notification
+      labels:
+        app: service-notification
+    spec:
+      containers:
+        - name: service-notification
+          image: ricardorqr/service-notification:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8083
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: kube
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: service-notification 
