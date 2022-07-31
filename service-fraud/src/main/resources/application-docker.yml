@@ -6,7 +6,7 @@ spring:
     name: service-fraud
   datasource: # H2 Database
     username: sa
-    url: jdbc:h2:mem:C:/fraud # jdbc:h2:mem:/home/ec2-user/fraud
+    url: jdbc:h2:mem:fraud # In memory DB
     driverClassName: org.h2.Driver
     password: password
   jpa:

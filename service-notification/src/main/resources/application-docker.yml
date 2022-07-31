@@ -6,7 +6,7 @@ spring:
     name: service-notification
   datasource: # H2 Database
     username: sa
-    url: jdbc:h2:mem:C:/notification # jdbc:h2:mem:/home/ec2-user/notification
+    url: jdbc:h2:mem:notification # In memory DB
     driverClassName: org.h2.Driver
     password: password
   jpa:
